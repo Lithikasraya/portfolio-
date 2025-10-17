@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .gradient-purple {
+    background: linear-gradient(135deg, #6A0DAD 0%, #9B4DCA 100%);
+  }
+
+  .gradient-blue {
+    background: linear-gradient(135deg, #007BFF 0%, #4DA3FF 100%);
+  }
+
+  .gradient-pink {
+    background: linear-gradient(135deg, #FF69B4 0%, #FF9BCF 100%);
+  }
+
+  .gradient-multi {
+    background: linear-gradient(135deg, #6A0DAD 0%, #007BFF 50%, #FF69B4 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #6A0DAD 0%, #007BFF 50%, #FF69B4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
