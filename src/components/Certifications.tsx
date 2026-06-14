@@ -4,7 +4,7 @@ const certifications = [
     title: 'Machine Learning ',
     note: 'IIIT HYDERABAD',
     year: '2024',
-    image: '../public/ml.jpg'
+    image: '/ml.jpg'
   },
   {
     title: 'python ',
@@ -19,7 +19,7 @@ const certifications = [
   image: '/kali basics.png'
   },
   {
-    title: 'harware basics ',
+    title: 'hardware basics ',
     note: 'cisco',
     year: '2025',
   image: '/hardware.png'
