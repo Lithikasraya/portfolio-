@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, Phone } from 'lucide-react';
 
 const contacts = [
   {
@@ -7,6 +7,13 @@ const contacts = [
     value: 'lithikasrayac@gmail.com',
     link: 'mailto:lithikasrayac@gmail.com',
     gradient: 'gradient-purple'
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    value: '+91 XXXXXXXXXX',
+    link: 'tel:+91XXXXXXXXXX',
+    gradient: 'gradient-pink'
   },
   {
     icon: Github,
@@ -35,7 +42,7 @@ export default function Contact() {
           Feel free to reach out for collaborations, opportunities, or just a friendly chat!
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {contacts.map((contact, index) => (
             <a
               key={index}
