@@ -52,7 +52,7 @@ export default function Certifications() {
               key={index}
               className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20"
             > <div className="w-full h-40 mb-4 overflow-hidden rounded-lg">
-                <img
+                <img 
                   src={cert.image}
                   alt={cert.title}
                   className="w-full h-full object-cover transition-transform group-hover:scale-110"

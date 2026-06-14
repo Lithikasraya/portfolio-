@@ -1,4 +1,4 @@
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 // ...existing code...
 
 export default function Hero() {
@@ -17,9 +17,9 @@ export default function Hero() {
             <div className="absolute -inset-1 gradient-multi rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/10">
               <img
-                src="/WhatsApp Image 2025-10-11 at 12.24.48_3c23712e.jpg"
+                src="/profile-photo.png"
                 alt="Lithika Sraya C"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -34,13 +34,23 @@ export default function Hero() {
             <p className="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
               Passionate about creating elegant solutions through code and exploring the endless possibilities of machine learning and web development.
             </p>
-            <button
-              onClick={scrollToProjects}
-              className="group relative inline-flex items-center gap-3 px-8 py-4 gradient-multi rounded-full font-semibold text-lg transition-transform hover:scale-105 active:scale-95"
-            >
-              View My Work
-              <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <button
+                onClick={scrollToProjects}
+                className="group relative inline-flex items-center gap-3 px-8 py-4 gradient-multi rounded-full font-semibold text-lg transition-transform hover:scale-105 active:scale-95"
+              >
+                View My Work
+                <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+              </button>
+              <a
+                href="/rsume.pdf"
+                download="Lithika_Resume.pdf"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 gradient-multi rounded-full font-semibold text-lg transition-transform hover:scale-105 active:scale-95"
+              >
+                Download Resume
+                <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

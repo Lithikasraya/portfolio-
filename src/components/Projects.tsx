@@ -1,33 +1,37 @@
-import { Code, Sparkles, Globe, Brain } from 'lucide-react';
+import { Code, Sparkles, Globe, Brain, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
-    title: 'AI Task Manager',
-    description: 'An intelligent task management application that uses machine learning to prioritize tasks and predict completion times.',
-    technologies: ['React', 'Python', 'TensorFlow', 'Node.js'],
+    title: 'Solar Dashboard',
+    description: 'A comprehensive solar energy monitoring dashboard displaying real-time energy generation, consumption metrics, and performance analytics.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    icon: Sparkles,
+    gradient: 'gradient-pink',
+    link: 'https://dashboard-liart-rho.vercel.app/'
+  },
+  {
+    title: 'Customer Lifetime Service',
+    description: 'A comprehensive customer relationship management system designed to track and optimize customer lifetime value with advanced analytics.',
+    technologies: ['React', 'Node.js', 'MongoDB', 'TypeScript'],
     icon: Brain,
-    gradient: 'gradient-purple'
+    gradient: 'gradient-purple',
+    link: 'https://github.com/Lithikasraya/customer-life-time-service-project-'
   },
   {
     title: 'E-Commerce Platform',
     description: 'A full-featured online shopping platform with real-time inventory management, payment integration, and user analytics.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
     icon: Globe,
-    gradient: 'gradient-blue'
-  },
-  {
-    title: 'Weather Forecast App',
-    description: 'A beautiful weather application with interactive maps, hourly forecasts, and severe weather alerts using real-time API data.',
-    technologies: ['JavaScript', 'API Integration', 'CSS3', 'Chart.js'],
-    icon: Sparkles,
-    gradient: 'gradient-pink'
+    gradient: 'gradient-blue',
+    link: ''
   },
   {
     title: 'Code Snippet Library',
     description: 'A personal code snippet manager with syntax highlighting, tagging system, and instant search functionality.',
     technologies: ['React', 'Firebase', 'Monaco Editor', 'TypeScript'],
     icon: Code,
-    gradient: 'gradient-purple'
+    gradient: 'gradient-purple',
+    link: ''
   }
 ];
 
@@ -40,14 +44,25 @@ export default function Projects() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                if (!project.link) {
+                  e.preventDefault();
+                }
+              }}
+              className={`group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
             >
               <div className={`w-16 h-16 ${project.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                 <project.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                {project.link && <ExternalLink className="w-5 h-5 text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity" />}
+              </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 {project.description}
               </p>
@@ -61,7 +76,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
